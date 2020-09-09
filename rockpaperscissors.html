@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+  <script type="text/javascript">
+    function randomNumber(max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    }
+
+    function computerPlay() {
+      const computerNumber = randomNumber(3);
+      const computerOptions = ['rock', 'paper', 'scissors'];
+      return computerOptions[computerNumber];
+    }
+
+
+
+    function playRound(playerSelection, computerPlay) {
+      const playerChoice = playerSelection.toLowerCase();
+      const options = ['scissors', 'rock', 'paper']
+
+      if (options.indexOf(playerChoice) == 0 && options.indexOf(computerPlay == 2)) {
+
+        return "Player Wins!"
+      }
+      else if (options.indexOf(playerChoice) > options.indexOf(computerPlay)){
+          return "Player Wins!"
+      }
+      else if (options.indexOf(playerChoice) == options.indexOf(computerPlay)){
+          return "Tied!"
+      }
+      else {
+        return "Computer Wins!"
+      }
+
+      //paper beats rock 
+      //rock beats scissors
+      //scissors beats paper
+      //[scissors, rock, paper]
+      //[0, 1, 2] 
+    }
+
+    function game() {
+      for (let i = 0; i < 5; i++) {
+        const playerSelection = prompt("Choose: rock, paper, or scissors");
+        const result = playRound(playerSelection, computerPlay());
+        console.log(result);
+      }
+    }
+    game();
+
+  </script>
+
+</body>
+</html>
