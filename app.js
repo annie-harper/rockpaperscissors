@@ -14,36 +14,36 @@
       return computerOptions[computerNumber];
     }
 
-    function capitalizeFirstLetterPlayer(playerSelection) {
-      capitalizedPlayerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
-    }
+    // function capPlayer(playerSelection) {
+    //   const Player = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
+    // }
 
-    function capitalizeFirstLetterComputer(computerPlay) {
-      capitalizedComputerPlay = computerPlay.charAt(0).toUpperCase() + computerPlay.slice(1);
-    }
+    // function capComputer(computerPlay) {
+    //   const Computer = computerPlay.charAt(0).toUpperCase() + computerPlay.slice(1);
+    // }
 
     function playRound(playerSelection, computerPlay) {
       const playerChoice = playerSelection.toLowerCase();
       const options = ['scissors', 'rock', 'paper'];
-      const playerCapitlize = capitalizeFirstLetter(playerChoice);
-      const computerCapitalize = capitalizeFirstLetter(computerPlay);
+      const capPlayer = playerChoice.charAt(0).toUpperCase() + playerSelection.slice(1);
+      const capComputer = computerPlay.charAt(0).toUpperCase() + computerPlay.slice(1);
 
 
       if (options.indexOf(playerChoice) == 0 && options.indexOf(computerPlay == 2)) {
           score ["player"]++;
-          return `Player chose ${capitalizedPlayerSelection}, computer chose ${capitalizedComputerPlay}. Player Wins!`
+          return `Player chose ${capPlayer}, computer chose ${capComputer}. Player Wins!`
       }
       else if (options.indexOf(playerChoice) > options.indexOf(computerPlay)){
           score ["player"]++;
-          return `Player chose ${capitalizedPlayerSelection}, computer chose ${capitalizedComputerPlay}. Player Wins!`
+          return `Player chose ${capPlayer}, computer chose ${capComputer}. Player Wins!`
       }
       else if (options.indexOf(playerChoice) == options.indexOf(computerPlay)){
           score ["player"];
-          return `Player and computer both chose ${capitalizedPlayerSelection}. It's a tie!`      
+          return `Player and computer both chose ${capPlayer}. It's a tie!`      
         }
       else {
           score["computer"]++;
-          return `Player chose ${capitalizedPlayerSelection}, computer chose ${capitalizedComputerPlay}. Computer Wins!`
+          return `Player chose ${capPlayer}, computer chose ${capComputer}. Computer Wins!`
       }
     };
 
